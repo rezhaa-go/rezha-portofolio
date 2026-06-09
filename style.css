@@ -1,0 +1,32 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+a {
+    transition: 0.3s;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+#mobile-menu a:hover {
+    background: #f97316;
+    color: white;
+}
