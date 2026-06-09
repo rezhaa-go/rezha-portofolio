@@ -42,61 +42,88 @@
     </nav>
 
 
-    <section id="beranda" class="relative px-6 md:px-10 pt-12 pb-0 lg:py-24 min-h-screen lg:min-h-[650px] flex flex-col justify-between overflow-x-hidden">
-
+    <section id="beranda" class="relative px-6 md:px-10 py-16 lg:py-24 min-h-[600px] overflow-x-hidden flex flex-col justify-between">
+    
     <div class="absolute inset-0 z-0">
         <img src="Image/LB 3 1.png" alt="Background Hero" class="w-full h-full object-cover">
     </div>
 
-    <div class="w-full max-w-7xl mx-auto relative z-10 pb-12 md:pb-6 lg:pb-32 mt-4 lg:mt-0">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-x-8 gap-y-6 lg:gap-10">
-
-            <div class="text-center md:text-left md:order-2 lg:order-1">
-                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+    <div class="w-full max-w-7xl mx-auto relative z-10 pb-32 md:hidden lg:block">
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-10"> 
+            
+            <div class="text-center lg:text-left">
+                <h1 class="text-2xl lg:text-4xl font-bold leading-tight mb-5">
                     Hi! Saya Rezha Anugrah Putra
                 </h1>
-                <p class="text-base md:text-md lg:text-xl leading-relaxed">
+                <p class="text-base lg:text-xl leading-relaxed">
                     Universitas Brawijaya, Sistem Informasi<br><br>
                     Portofolio ini akan menunjukkan perjalanan saya sebagai mahasiswa yang bermimpi menjadi
                     <b>Product Manager.</b>
                 </p>
-            </div>
 
-            <div class="md:order-1 lg:order-2 lg:-mb-32 self-center lg:self-end z-20">
-                <img src="Image/Foto_Rezha.png" alt="Foto Rezha" class="block w-full max-h-[250px] md:max-h-[280px] lg:max-h-[420px] object-contain mx-auto">
-            </div>
-
-            <div class="md:order-3 lg:contents">
-                <div class="grid grid-cols-2 gap-4 max-w-md mx-auto md:mx-0 lg:mt-8">
+                <div class="grid grid-cols-2 gap-4 mt-8 max-w-md mx-auto lg:mx-0">
                     <a href="#tentang" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm md:text-base">
-                            Tentang Saya
-                        </span>
+                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm lg:text-base">Tentang Saya</span>
                     </a>
                     <a href="#portofolio" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm md:text-base">
-                            Lihat Portofolio
-                        </span>
+                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm lg:text-base">Lihat Portofolio</span>
                     </a>
                     <a href="#pengalaman" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm md:text-base">
-                            Lihat Pengalaman
-                        </span>
+                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm lg:text-base">Lihat Pengalaman</span>
                     </a>
                     <a href="#kontak" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm md:text-base">
-                            Hubungi Saya
-                        </span>
+                        <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm lg:text-base">Hubungi Saya</span>
                     </a>
                 </div>
             </div>
 
-            <div class="md:order-4 lg:order-3 lg:-mb-32 self-center lg:self-end z-20">
-                <img src="Image/Portof.png" alt="Portofolio rezha" class="block w-full max-h-[220px] md:max-h-[250px] lg:max-h-[400px] object-contain mx-auto">
+            <div class="lg:-mb-32 self-end">
+                <img src="Image/Foto_Rezha.png" alt="Foto Rezha" class="block w-full">
+            </div>
+
+            <div class="lg:-mb-32 self-end">
+                <img src="Image/Portof.png" width="800" alt="Portofolio rezha" class="block w-full">
             </div>
 
         </div>
+    </div>
+
+    <div class="w-full max-w-7xl mx-auto relative z-10 pb-12 hidden md:grid lg:hidden grid-cols-2 items-center gap-x-10 gap-y-6">
+        
+        <div class="self-center">
+            <img src="Image/Foto_Rezha.png" alt="Foto Rezha" class="block w-full max-h-[300px] object-contain mx-auto">
+        </div>
+
+        <div class="text-left">
+            <h1 class="text-3xl font-bold mb-4">
+                Hi! Saya Rezha Anugrah Putra
+            </h1>
+            <p class="text-lg leading-relaxed">
+                Universitas Brawijaya, Sistem Informasi<br><br>
+                Portofolio ini akan menunjukkan perjalanan saya sebagai mahasiswa yang bermimpi menjadi
+                <b>Product Manager.</b>
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+            <a href="#tentang" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
+                <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm">Tentang Saya</span>
+            </a>
+            <a href="#portofolio" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
+                <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm">Lihat Portofolio</span>
+            </a>
+            <a href="#pengalaman" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
+                <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm">Lihat Pengalaman</span>
+            </a>
+            <a href="#kontak" class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
+                <span class="font-semibold text-black group-hover:text-white transition-colors duration-300 text-sm">Hubungi Saya</span>
+            </a>
+        </div>
+
+        <div class="self-center">
+            <img src="Image/Portof.png" alt="Portofolio rezha" class="block w-full max-h-[250px] object-contain mx-auto">
+        </div>
+
     </div>
 
     <div class="relative lg:absolute lg:bottom-0 lg:left-0 w-full h-auto lg:h-44 bg-orange-500 z-30 flex items-center py-8 lg:py-0 mt-auto">
@@ -104,29 +131,25 @@
 
             <div class="grid grid-cols-2 gap-4 w-full max-w-md">
                 <div class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                    <a href="https://wa.me/6289508044747" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
+                    <a href="https://wa.me/6289508044747" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>WhatsApp</span>
                     </a>
                 </div>
                 <div class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
                         <i class="fa-solid fa-envelope text-lg"></i>
                         <span>Email</span>
                     </a>
                 </div>
                 <div class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                    <a href="https://www.linkedin.com/in/rezha-anugrah-putra" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
+                    <a href="https://www.linkedin.com/in/rezha-anugrah-putra" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
                         <i class="fa-brands fa-linkedin text-lg"></i>
                         <span>LinkedIn</span>
                     </a>
                 </div>
                 <div class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                    <a href="https://www.instagram.com/rezha_ptra" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
+                    <a href="https://www.instagram.com/rezha_ptra" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 w-full">
                         <i class="fa-brands fa-instagram text-lg"></i>
                         <span>Instagram</span>
                     </a>
@@ -135,10 +158,7 @@
 
             <div class="bg-white shadow-lg rounded-2xl px-6 py-4 w-full max-w-md">
                 <p class="text-xs text-gray-800 leading-relaxed">
-                    Mahasiswa Sistem Informasi Fakultas Ilmu Komputer Universitas Brawijaya dengan minat
-                    pada <b>Product Manager</b> melalui pengembangan digital yang berdampak luas dan positif.
-                    Terampil dalam komunikasi lintas pihak, analisis masalah dan problem solving, yang fokus
-                    pada kebutuhan pengguna untuk <b>menghasilkan solusi yang berdampak.</b>
+                    Mahasiswa Sistem Informasi Fakultas Ilmu Komputer Universitas Brawijaya dengan minat pada <b>Product Manager</b> melalui pengembangan digital yang berdampak luas dan positif. Terampil dalam komunikasi lintas pihak, analisis masalah dan problem solving, yang fokus pada kebutuhan pengguna untuk <b>menghasilkan solusi yang berdampak.</b>
                 </p>
             </div>
 
