@@ -4,454 +4,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Rezha</title>
+    <title>Rezha Anugrah Putra — Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- PERUBAHAN: Tambah Google Fonts (Inter + Syne) untuk tipografi lebih modern & portofolio-worthy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body class="bg-white text-black">
-    <nav
-        class="sticky top-0 z-50 relative flex justify-between items-center px-8 py-4 bg-white shadow-lg mx-auto w-full">
-        <h1 class="text-xl font-bold">
+
+    <!-- NAVBAR
+        PERUBAHAN: Tambah aria-label untuk aksesibilitas, pastikan
+        mobile menu button punya id yang benar untuk script.js -->
+    <nav class="sticky top-0 z-50 flex justify-between items-center px-8 py-4 bg-white shadow-sm w-full"
+        role="navigation" aria-label="Navigasi utama">
+        <h1 class="nav-brand">
             Rezha Anugrah Putra
         </h1>
-        <ul class="hidden md:flex gap-8">
-            <li><a href="#beranda" class="hover:text-orange-500 transition duration-300">Beranda</a></li>
-            <li><a href="#tentang" class="hover:text-orange-500 transition duration-300">Tentang Saya</a></li>
-            <li><a href="#portofolio" class="hover:text-orange-500 transition duration-300">Portofolio</a></li>
-            <li><a href="#pengalaman" class="hover:text-orange-500 transition duration-300">Pengalaman</a></li>
-            <li><a href="#kontak" class="hover:text-orange-500 transition duration-300">Kontak</a></li>
+        <ul class="hidden md:flex gap-8 items-center">
+            <li><a href="CV/CV Rezha.pdf" target="_blank" class="nav-link">CV</a></li>
+            <li><a href="#beranda" class="nav-link">Beranda</a></li>
+            <li><a href="#tentang" class="nav-link">Tentang Saya</a></li>
+            <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+            <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
+            <li><a href="#kontak" class="nav-link-cta">Kontak</a></li>
         </ul>
-        <button id="menu-btn" class="md:hidden text-3xl font-bold">
-            ☰
+
+        <!-- PERUBAHAN: Tambah aria-label & aria-expanded untuk aksesibilitas mobile -->
+        <button id="menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Buka menu"
+            aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
         </button>
 
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
-
-            <ul class="flex flex-col p-4 gap-4 text-center">
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
+            <ul class="flex flex-col p-4 gap-2 text-center">
+                <li><a href="CV/CV Rezha.pdf" target="_blank" class="nav-link">CV</a></li>
                 <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#tentang">Tentang Saya</a></li>
                 <li><a href="#portofolio">Portofolio</a></li>
                 <li><a href="#pengalaman">Pengalaman</a></li>
                 <li><a href="#kontak">Kontak</a></li>
             </ul>
-
         </div>
     </nav>
 
+    <!-- HERO SECTION
+         PERUBAHAN:
+         - Hapus kolom ke-3 (Image/Portof.png) → jadi 2 kolom
+         - Orange bar bawah dipisah jadi section sendiri supaya
+           tidak overlap dengan konten hero di mobile
+         - Social links di orange bar lebih responsif -->
+    <section id="beranda" class="relative px-6 md:px-10 py-20 overflow-hidden">
 
-    <section id="beranda" class="relative px-6 md:px-10 py-24 min-h-[600px]">
-
+        <!-- Background image -->
         <div class="absolute inset-0 z-0">
-            <img src="Image/LB 3 1.png" alt="Background Hero" class="w-full h-full object-cover">
+            <img src="Image/LB 3 1.png" alt="" role="presentation" class="w-full h-full object-cover">
         </div>
 
-        <div class="max-w-7xl mx-auto relative z-10 pb-32">
-            <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-10">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-end gap-10 pb-10 lg:pb-24">
 
-                <div>
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">
-                        Hi! Saya Rezha Anugrah Putra
+                <!-- Kolom teks -->
+                <div class="fade-in">
+                    <span class="hero-eyebrow">Sistem Informasi · Universitas Brawijaya</span>
+                    <h1 class="hero-title">
+                        Hi! Saya<br>
+                        <span class="text-orange-500">Rezha Anugrah</span><br>
+                        Putra
                     </h1>
-                    <p class="text-base md:text-lg lg:text-xl leading-relaxed">
-                        Universitas Brawijaya, Sistem Informasi<br><br>
-                        Portofolio ini akan menunjukkan perjalanan saya sebagai mahasiswa yang bermimpi menjadi
-                        <b>Product Manager.</b>
+                    <p class="hero-subtitle">
+                        Mahasiswa yang memiliki minat besar sebagai <b>Product Manager</b> dengan 
+                        membangun solusi digital yang berdampak nyata bagi masyarakat.
                     </p>
 
-                    <div class="grid grid-cols-2 gap-4 mt-8 max-w-md">
-
-                        <a href="#tentang"
-                            class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                            <span
-                                class="font-semibold text-black group-hover:text-white transition-colors duration-300">
-                                Tentang Saya
-                            </span>
-                        </a>
-
-                        <a href="#portofolio"
-                            class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                            <span
-                                class="font-semibold text-black group-hover:text-white transition-colors duration-300">
-                                Lihat Portofolio
-                            </span>
-                        </a>
-
-                        <a href="#pengalaman"
-                            class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                            <span
-                                class="font-semibold text-black group-hover:text-white transition-colors duration-300">
-                                Lihat Pengalaman
-                            </span>
-                        </a>
-
-                        <a href="#kontak"
-                            class="bg-orange-500 shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group">
-                            <span
-                                class="font-semibold text-black group-hover:text-white transition-colors duration-300">
-                                Hubungi Saya
-                            </span>
-                        </a>
-
+                    <div class="grid grid-cols-2 gap-3 mt-8 max-w-sm">
+                        <a href="#tentang" class="btn-primary">Tentang Saya</a>
+                        <a href="#portofolio" class="btn-primary">Lihat Portofolio</a>
+                        <a href="#pengalaman" class="btn-primary">Pengalaman</a>
+                        <a href="#kontak" class="btn-primary">Hubungi Saya</a>
                     </div>
                 </div>
 
-                <div class="lg:-mb-32 self-end">
-                    <img src="Image/Foto_Rezha.png" alt="Foto Rezha" class="block w-full">
+                <!-- Kolom foto -->
+                <div class="flex justify-center lg:justify-end fade-in" style="animation-delay:.15s">
+                    <img src="Image/Profil awal.png" alt="Foto Rezha Anugrah Putra" class="hero-photo">
                 </div>
-
-                <div>
-                    <img src="Image/Portof.png" alt="Portofolio rezha" class="block w-full">
-                </div>
-
-            </div>
-        </div>
-
-        <div class="absolute bottom-0 left-0 w-full min-h-44 bg-orange-500 z-10 flex items-center">
-            <div class="w-full max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-10">
-
-                <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-                    <div
-                        class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                        <a href="https://wa.me/6289508044747" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                    </div>
-                    <div
-                        class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com" target="_blank" rel="noopener noreferrer"
-                            class="text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 block w-full">
-                            <i class="fa-solid fa-envelope text-lg"></i>
-                            <span>Email</span>
-                        </a>
-                    </div>
-                    <div
-                        class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                        <a href="https://www.linkedin.com/in/rezha-anugrah-putra" target="_blank" rel="noopener noreferrer"
-                            class="text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 block w-full">
-                            <i class="fa-brands fa-linkedin text-lg"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                    <div
-                        class="bg-white shadow-lg p-4 rounded-2xl text-center transition duration-300 ease-out transform hover:scale-105 group cursor-pointer">
-                        <a href="https://www.instagram.com/rezha_ptra" target="_blank" rel="noopener noreferrer"
-                            class="text-xs font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-300 block w-full">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                            <span>Instagram</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white shadow-lg rounded-2xl px-6 py-4 max-w-md">
-                    <p class="text-xs text-gray-800 leading-relaxed">
-                        Mahasiswa Sistem Informasi Fakultas Ilmu Komputer Universitas Brawijaya dengan minat
-                        pada <b>Product Manager</b> melalui pengembangan digital yang berdampak luas dan positif.
-                        Terampil dalam komunikasi lintas pihak, analisis masalah dan problem solving, yang fokus
-                        pada kebutuhan pengguna untuk <b>menghasilkan solusi yang berdampak.</b>
-                    </p>
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- PERUBAHAN: Orange bar dipindah ke luar hero section supaya tidak overlap di mobile -->
+    <div class="w-full bg-orange-500 py-8 px-6 md:px-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <!-- Social links -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="https://wa.me/6289508044747" target="_blank" rel="noopener noreferrer" class="social-chip">
+                    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com" target="_blank"
+                    rel="noopener noreferrer" class="social-chip">
+                    <i class="fa-solid fa-envelope"></i><span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/rezha-anugrah-putra" target="_blank" rel="noopener noreferrer"
+                    class="social-chip">
+                    <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/rezha_ptra" target="_blank" rel="noopener noreferrer"
+                    class="social-chip">
+                    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+                </a>
+            </div>
+
+            <!-- Bio singkat -->
+            <div class="bg-white rounded-2xl px-6 py-4 max-w-md text-sm text-gray-700 leading-relaxed">
+                Mahasiswa Sistem Informasi FILKOM UB dengan minat besar sebagai <b>Product Manager</b> yang terampil
+                dalam komunikasi lintas pihak, analisis masalah, dan <b>menghasilkan solusi yang
+                berdampak.</b>
+            </div>
+        </div>
+    </div>
+
+    <!-- TENTANG SAYA-->
     <section id="tentang" class="px-6 md:px-10 py-24">
         <div class="max-w-7xl mx-auto">
-            <div class="py-24">
-                <div class="bg-orange-500 shadow-lg p-5 rounded-2xl text-center text-xl max-w-sm">
-                    <b>Tentang Saya</b>
-                </div>
-            </div>
-            <div class="py-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <b>Pendidikan & Fokus</b>
-                </div>
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <b>Kemampuan & Kekuatan</b>
-                </div>
-                <div class="bg-white p-8 shadow-lg rounded-2xl text-justify">
-                    Saya adalah mahasiswa <b>Sistem Informasi Universitas Brawijaya</b> yang memiliki
-                    ketertarikan pada <b>Product Manager (PM)</b> melalui pengembangan teknologi, problem solving,
-                    dan eksplorasi solusi digital yang berdampak bagi masyarakat. Saya senang
-                    mempelajari hal baru dan terus berkembang melalui berbagai pengalaman akademik maupun organisasi.
-                </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify">
-                    Saya memiliki ketertarikan pada <b>problem solving, komunikasi, dan pengembangan
-                        ide</b> dalam berbagai proyek maupun kegiatan organisasi. Saya juga terbiasa <b>bekerja
-                        secara terstruktur</b>, baik secara individu maupun bersama tim.
-                </div>
-            </div>
 
-            <div class="py-16 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <b>Projek & Pengalaman</b>
+            <div class="section-label fade-in">Tentang Saya</div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+                <div class="about-card">
+                    <div class="about-card-header">🎓 Pendidikan & Fokus</div>
+                    <p>
+                        Saya adalah mahasiswa <b>Sistem Informasi Universitas Brawijaya</b> yang memiliki
+                        ketertarikan pada <b>Product Manager (PM)</b> melalui pengembangan teknologi, problem
+                        solving, dan eksplorasi solusi digital yang berdampak bagi masyarakat. Saya senang mempelajari 
+                        hal baru dan terus berkembang melalui berbagai pengalaman akademik maupun organisasi.
+                    </p>
                 </div>
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <b>Tujuan & Harapan</b>
+                <div class="about-card">
+                    <div class="about-card-header">💡 Kemampuan & Kekuatan</div>
+                    <p>
+                        Saya memiliki ketertarikan pada <b>problem solving, komunikasi, dan pengembangan
+                        ide</b> dalam berbagai proyek maupun kegiatan organisasi. Saya juga terbiasa
+                        <b>bekerja secara terstruktur</b>, baik secara individu maupun bersama tim.
+                    </p>
                 </div>
-                <div class="bg-white p-8 shadow-lg rounded-2xl text-justify">
-                    Selama proses belajar, saya <b>terlibat dalam berbagai
+                <div class="about-card">
+                    <div class="about-card-header">🚀 Projek & Pengalaman</div>
+                    <p>
+                        Selama proses belajar, saya <b>terlibat dalam berbagai
                         pengalaman</b> organisasi, kepanitiaan, debat, kepenulisan,
-                    hingga pengembangan ide proyek berbasis teknologi seperti
-                    NutriBuddy, SolarPlan dan beberapa konsep inovasi lainnya
-                    yang sudah dikembangkan sejak SMA.
+                        hingga pengembangan ide proyek berbasis teknologi seperti
+                        NutriBuddy, SolarPlan dan beberapa konsep inovasi lainnya
+                        yang sudah dikembangkan sejak SMA.
+                    </p>
                 </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify">
-                    Saya percaya bahwa <b>teknologi bukan hanya tentang perkembangan
+                <div class="about-card">
+                    <div class="about-card-header">🎯 Tujuan & Harapan</div>
+                    <p>
+                        Saya percaya bahwa <b>teknologi bukan hanya tentang perkembangan
                         digital</b>, tetapi juga tentang bagaimana sebuah solusi dapat
-                    <b>memberikan dampak nyata bagi lingkungan sekitar</b>. Melalui
-                    portofolio ini, saya ingin menunjukkan proses belajar,
-                    pengalaman, dan perjalanan pengembangan diri yang terus
-                    saya bangun.
+                        <b>memberikan dampak nyata bagi lingkungan sekitar</b>. Melalui
+                        portofolio ini, saya ingin menunjukkan proses belajar,
+                        pengalaman, dan perjalanan pengembangan diri yang terus
+                        saya bangun.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portofolio" class="relative px-6 md:px-10 py-10">
-    <div class="max-w-7xl mx-auto">
-        
-        <div class="py-12 lg:py-24">
-            <div class="bg-orange-500 shadow-lg p-5 rounded-2xl text-center text-xl max-w-sm mx-auto md:mx-0">
-                <b>Portofolio</b>
+    <!-- PORTOFOLIO
+        PERUBAHAN: Nested grid yang berantakan diganti dengan
+        layout card yang konsisten & lebih mudah dibaca -->
+
+    <section id="portofolio" class="px-6 md:px-10 py-24 bg-orange-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="section-label fade-in">Portofolio</div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- NUS7NTARA -->
+                <div class="project-card fade-in">
+                    <img src="Image/NUS7NTARA.png" alt="Projek NUS7NTARA" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">NUS7NTARA</h3>
+                        <p class="project-desc">
+                            Aplikasi gamifikasi untuk mengenal keberagaman budaya Indonesia. Memanfaatkan metode
+                            gamifikasi sebagai media pembelajaran yang menyenangkan untuk target pengguna anak muda
+                            sebagai solusi terhadap <b>revitalisasi budaya di era modern.</b>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NutriBuddy -->
+                <div class="project-card fade-in" style="animation-delay:.1s">
+                    <img src="Image/NutriBuddy.png" alt="Projek NutriBuddy" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">NutriBuddy</h3>
+                        <p class="project-desc">
+                            Aplikasi yang dikembangkan untuk mengetahui porsi makanan harian sesuai kebutuhan energi,
+                            gizi, dan kalori. Mendorong perubahan pola konsumsi yang <b>lebih teratur dan sesuai
+                            kebutuhan tubuh.</b>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- MEETRA -->
+                <div class="project-card fade-in" style="animation-delay:.05s">
+                    <img src="Image/MEETRA.png" alt="Projek MEETRA" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">MEETRA</h3>
+                        <p class="project-desc">
+                            Platform pembelajaran inklusif yang mengintegrasikan Google Meet, Classroom, dan fitur LMS
+                            lainnya. Dirancang <b>memperhatikan kebutuhan teman difabel</b> tanpa mengabaikan
+                            pengguna umum.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PathEarn Mobile -->
+                <div class="project-card fade-in" style="animation-delay:.15s">
+                    <img src="Image/PathEarn (Mobile).png" alt="Projek PathEarn Mobile" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">PathEarn <span class="project-tag">Mobile</span></h3>
+                        <p class="project-desc">
+                            Aplikasi yang dirancang untuk memperbesar peluang kerja pasca-lulus, fokus pada bisnis &
+                            manajemen. Membantu lulusan sekaligus <b>meringankan pengeluaran finansial
+                            perusahaan.</b>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- WisNu -->
+                <div class="project-card fade-in">
+                    <img src="Image/WisNu.png" alt="Projek WisNu" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">WisNu</h3>
+                        <p class="project-desc">
+                            Aplikasi navigasi wisatawan dengan fitur pemesanan hotel, pramuwisata, hingga
+                            <b>Augmented Reality</b> untuk mengenal cerita legenda objek wisata 
+                            seperti Candi Prambanan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SolarPlan -->
+                <div class="project-card fade-in" style="animation-delay:.1s">
+                    <img src="Image/SolarPlan.png" alt="Projek SolarPlan" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">SolarPlan</h3>
+                        <p class="project-desc">
+                            Aplikasi yang membantu pelanggan <b>mengambil keputusan</b> untuk bertransisi ke
+                            energi terbarukan PLTS dengan menyediakan bantuan mulai dari menghitung kebutuhan listrik, pemasangan, maintenance,
+                            hingga analisis produksi energi harian.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TaskMate -->
+                <div class="project-card fade-in" style="animation-delay:.05s">
+                    <img src="Image/TaskMate.png" alt="Projek TaskMate" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">TaskMate</h3>
+                        <p class="project-desc">
+                            Website manajemen waktu yang hadir atas <b>kebutuhan mahasiswa</b>. Memudahkan
+                            navigasi tugas, pengurutan berdasarkan urgenitas, dan pemantauan progres penyelesaian tugas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PathEarn Web -->
+                <div class="project-card fade-in" style="animation-delay:.15s">
+                    <img src="Image/PathEarn (web).png" alt="Projek PathEarn Website" class="project-img">
+                    <div class="project-body">
+                        <h3 class="project-title">PathEarn <span class="project-tag">Website</span></h3>
+                        <p class="project-desc">
+                            Versi web PathEarn yang <b>lebih informatif dan mudah diakses</b> lewat browser.
+                            Dilengkapi eksplorasi skill, roadmap pengembangan, informasi peluang, dan sistem progress
+                            karier.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 pb-16">
-            
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-6 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">NUS7NTARA</h3>
-                </div>
-                <div class="h-64 md:h-80 lg:h-96 w-full">
-                    <img src="Image/NUS7NTARA.png" alt="Projek NUS7NTARA" class="w-full h-full object-cover rounded-2xl shadow-sm">
-                </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex-grow">
-                    <b>NUS7NTARA</b>, sebuah aplikasi gamifikasi yang dibuat untuk mengenal lebih dalam terkait
-                    keberagaman budaya yang dimiliki Indonesia. Permainan ini bertujuan untuk <b>revitalisasi
-                    budaya di era modern</b> untuk target pengguna anak muda yang lebih senang menghabiskan waktunya
-                    dengan bermain. Memanfaatkan metode gamifikasi sebagai media pembelajaran yang menyenangkan
-                    dan menantang. Sehingga pengguna mendapatkan pesan-pesan secara tersirat.
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-6 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">NutriBuddy</h3>
-                </div>
-                <div class="h-64 md:h-80 lg:h-96 w-full">
-                    <img src="Image/NutriBuddy.png" alt="Projek NutriBuddy" class="w-full h-full object-cover rounded-2xl shadow-sm">
-                </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex-grow">
-                    <b>NutriBuddy</b>, sebuah aplikasi yang dikembangkan untuk mengetahui porsi makanan dalam sehari
-                    untuk memenuhi kebutuhan aktivitas tubuh. Kebutuhan tubuh diproyeksikan ke dalam 3 hal, yakni
-                    energi, gizi, dan kalori. Dengan hadirnya NutriBuddy diharapkan adanya perubahan pola konsumsi
-                    yang <b>lebih teratur dan sesuai kebutuhan tubuh</b>.
-                </div>
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-16 border-t border-gray-200">
-            
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">MEETRA</h3>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
-                    <div class="w-full h-[300px] lg:h-[450px]">
-                        <img src="Image/MEETRA.png" class="w-full h-full object-cover rounded-2xl shadow-md" alt="Projek MEETRA">
-                    </div>
-                    <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex items-center">
-                        <div>
-                            <b>MEETRA</b>, sebuah platform pembelajaran inklusif yang mengintegrasikan google meet, classroom,
-                            dan beberapa fitur LMS lainnya. MEETRA didesain dengan tetap <b>memperhatikan kebutuhan
-                            teman difabel namun tidak mengabaikan kebutuhan pengguna biasa</b>.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">PathEarn (Mobile)</h3>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
-                    <div class="w-full h-[300px] lg:h-[450px]">
-                        <img src="Image/PathEarn (Mobile).png" class="w-full h-full object-cover rounded-2xl shadow-md" alt="Projek PathEarn">
-                    </div>
-                    <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex items-center">
-                        <div>
-                            <b>PathEarn</b>, sebuah aplikasi yang dirancang untuk memperbesar peluang kerja setelah lulus terutama
-                            pada fokus bisnis & manajemen. Selain itu, PathEarn tidak hanya membantu lulusan mahasiswa,
-                            tetapi juga <b>meringankan pengeluaran finansial</b> yang dimiliki oleh perusahaan.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-16 border-t border-gray-200">
-            
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">WisNu</h3>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
-                    <div class="w-full h-[300px] lg:h-[450px]">
-                        <img src="Image/WisNu.png" class="w-full h-full object-cover rounded-2xl shadow-md" alt="Projek WisNu">
-                    </div>
-                    <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex items-center">
-                        <div>
-                            <b>WisNu</b>, Aplikasi yang dirancang untuk memudahkan navigasi wisatawan. WisNu mampu <b>menjadi
-                            teman perjalanan</b> wisatawan dengan menghadirkan pemesanan hotel, pramuwisata, hingga menyediakan
-                            konsep AR untuk wisatawan yang ingin mengenal lebih dalam cerita legenda objek wisata seperti Candi Prambanan.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-8 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">SolarPlan</h3>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
-                    <div class="w-full h-[300px] lg:h-[450px]">
-                        <img src="Image/Rectangle 42.png" class="w-full h-full object-cover rounded-2xl shadow-md" alt="Projek SolarPlan">
-                    </div>
-                    <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex items-center">
-                        <div>
-                            <b>SolarPlan</b>, sebuah aplikasi yang bertujuan untuk membantu pelanggan dalam <b>mengambil keputusan</b> untuk
-                            melakukan transisi ke energi terbarukan PLTS. SolarPlan membantu pelanggan menghitung kebutuhan listrik,
-                            pemasangan, maintenance, hingga analisis produksi dan konsumen energi listrik harian.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 border-t border-gray-200">
-            
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-6 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">TaskMate</h3>
-                </div>
-                <div class="h-64 md:h-80 lg:h-96 w-full">
-                    <img src="Image/TaskMate.png" alt="Projek TaskMate" class="w-full h-full object-cover rounded-2xl shadow-sm">
-                </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex-grow">
-                    <b>TaskMate</b>, sebuah website yang hadir akibat <b>kebutuhan mahasiswa terhadap manajemen waktu</b>.
-                    TaskMate hadir dengan memberikan kemudahan dalam navigasi tugas, sehingga pengguna dapat mengetahui tugas apa
-                    saja yang harus diselesaikan, yang belum selesai dan progres tugas yang telah diselesaikan. Pengguna
-                    dapat mengurutkan tugas berdasarkan urgenitas-nya dan tenggat waktu.
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-                <div class="bg-orange-500 shadow-lg p-6 rounded-2xl text-center text-xl">
-                    <h3 class="font-bold">PathEarn (Website)</h3>
-                </div>
-                <div class="h-64 md:h-80 lg:h-96 w-full">
-                    <img src="Image/PathEarn (web).png" alt="Projek PathEarn (web)" class="w-full h-full object-cover rounded-2xl shadow-sm">
-                </div>
-                <div class="bg-white shadow-lg p-8 rounded-2xl text-justify flex-grow">
-                    <b>PathEarn</b>, seperti PathEarn versi mobile sebelumnya, ia juga memiliki fungsi yang sama. Namun
-                    PathEarn web dirancang <b>lebih informatif dan mudah diakses</b> karena bisa lewat browser. PathEarn web turut
-                    menyediakan berbagai fitur seperti eksplorasi skill, roadmap pengembangan, informasi peluang, serta sistem progress
-                    yang membantu pengguna memahami langkah yang dapat mereka ambil untuk mencapai tujuan mereka.
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
+    <!-- PENGALAMAN
+        PERUBAHAN: grid xl:grid-cols-5 di mobile/tablet tidak
+        responsif → diganti grid adaptif 1-2-3 kolom -->
 
     <section id="pengalaman" class="px-6 md:px-10 py-24">
         <div class="max-w-7xl mx-auto">
-            <div class="py-24">
-                <div class="bg-orange-500 shadow-lg p-5 rounded-2xl text-center text-xl max-w-sm">
-                    <b>Pengalaman</b>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 mt-10">
 
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-4 text-center transition duration-300 hover:bg-orange-500 group">
-                    <img src="Image/Debat.png" alt="Ekstrakulikuler Debat"
-                        class="w-full h-48 object-contain rounded-xl transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mt-4 group-hover:text-white transition duration-300">
-                        Debat & KTI
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-2 group-hover:text-white transition duration-300">
-                        Mengikuti berbagai kompetisi debat dan esai untuk
-                        mengembangkan kemampuan berpikir kritis,
-                        argumentasi, serta public speaking. Selain itu,
-                        menjabat sebagai ketua Debat & KTI 2024 SMAN 10 Pontianak
+            <div class="section-label fade-in">Pengalaman</div>
+
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+                <div class="exp-card fade-in">
+                    <img src="Image/Debat.png" alt="Ekstrakulikuler Debat" class="exp-img">
+                    <h3 class="exp-title">Debat & KTI</h3>
+                    <p class="exp-desc">
+                        Mengikuti berbagai kompetisi debat dan esai untuk mengembangkan kemampuan berpikir kritis,
+                        argumentasi, serta public speaking. Menjabat sebagai <b>Ketua Debat & KTI 2024</b> SMAN 10 Pontianak.
                     </p>
                 </div>
 
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-4 text-center transition duration-300 hover:bg-orange-500 group">
-                    <img src="Image/MPK.png" alt="Organisasi Majelis Perwakilan Kelas"
-                        class="w-full h-48 object-contain rounded-xl transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mt-4 group-hover:text-white transition duration-300">
-                        MPK
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-2 group-hover:text-white transition duration-300">
-                        Menjadi Sekretaris MPK SMAN 10 Pontianak 2024 dan terlibat dalam
-                        administrasi organisasi serta koordinasi program kerja bersama OSIS.
-                        Dipercaya sebagai juru bicara MPK untuk pihak internal & eksternal
+                <div class="exp-card fade-in" style="animation-delay:.08s">
+                    <img src="Image/MPK.png" alt="Organisasi MPK" class="exp-img">
+                    <h3 class="exp-title">MPK</h3>
+                    <p class="exp-desc">
+                        Sekretaris MPK SMAN 10 Pontianak 2024. Terlibat dalam <b>administrasi organisasi dan koordinasi
+                        program kerja bersama OSIS</b>. <b>Dipercaya sebagai juru bicara</b> MPK untuk pihak internal & eksternal.
                     </p>
                 </div>
 
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-4 text-center transition duration-300 hover:bg-orange-500 group">
-                    <img src="Image/RNK.png" alt="Program Kerja RNK"
-                        class="w-full h-48 object-contain rounded-xl transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mt-4 group-hover:text-white transition duration-300">
-                        RNK
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-2 group-hover:text-white transition duration-300">
-                        Berpartisipasi dalam kegiatan kepanitiaan
-                        sebagai staff acara. Berperan dalam keberlangsungan acara
-                        dan memastikan kegiatan EXPO berjalan dengan lancar
+                <div class="exp-card fade-in" style="animation-delay:.16s">
+                    <img src="Image/RNK.png" alt="Program Kerja RNK" class="exp-img">
+                    <h3 class="exp-title">RNK</h3>
+                    <p class="exp-desc">
+                        Berpartisipasi dalam kepanitiaan sebagai <b>staff acara</b>. Berperan dalam keberlangsungan acara dan
+                        memastikan kegiatan EXPO berjalan dengan lancar.
                     </p>
                 </div>
 
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-4 text-center transition duration-300 hover:bg-orange-500 group">
-                    <img src="Image/Raion.png" alt="LSO Raion"
-                        class="w-full h-48 object-contain rounded-xl transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mt-4 group-hover:text-white transition duration-300">
-                        Raion
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-2 group-hover:text-white transition duration-300">
-                        Aktif dalam kegiatan kemahasiswaan dan
-                        pengembangan relasi antar mahasiswa.
-                        Masuk ke dalam divisi administrasi sebagai staff Resource Development.
-                        Kemudian pada divisi bisnis sebagai staff Raion Craft: Software House.
+                <div class="exp-card fade-in" style="animation-delay:.24s">
+                    <img src="Image/Raion.png" alt="LSO Raion" class="exp-img">
+                    <h3 class="exp-title">Raion</h3>
+                    <p class="exp-desc">
+                        Aktif dalam kegiatan kemahasiswaan. Berada pada divisi administrasi sebagai <b>staff Resource Development 
+                        dan divisi bisnis sebagai staff Raion Craft: Software House</b>.
                     </p>
                 </div>
 
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-4 text-center transition duration-300 hover:bg-orange-500 group">
-                    <img src="Image/Ascend.png" alt="Workshop ASCEND"
-                        class="w-full h-48 object-contain rounded-xl transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mt-4 text-gray-900 group-hover:text-white transition duration-300">
-                        ASCEND
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-2 group-hover:text-white transition duration-300">
-                        Mengikuti program pengembangan diri dan
-                        peningkatan kemampuan kepemimpinan. Berperan sebagai Product Manager (PM)
-                        serta ketua tim. Berhasil membawa tim menjadi kelompok terbaik dengan produk SolarPlan
+                <div class="exp-card fade-in" style="animation-delay:.32s">
+                    <img src="Image/Ascend.png" alt="Workshop ASCEND" class="exp-img">
+                    <h3 class="exp-title">ASCEND</h3>
+                    <p class="exp-desc">
+                        Program pengembangan kepemimpinan. Berperan sebagai Product Manager (PM) sekaligus ketua tim.
+                        Berhasil membawa tim menjadi <b>kelompok terbaik</b> dengan produk SolarPlan.
                     </p>
                 </div>
 
@@ -459,81 +354,62 @@
         </div>
     </section>
 
-    <section id="kontak" class="mt-24 w-full">
-        <div class="w-full bg-orange-500">
-            <div class="max-w-7xl mx-auto h-20 flex items-center px-8 md:px-20">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 w-full text-black">
-                    <h3 class="font-bold text-xl">Hubungi</h3>
-                    <h3 class="font-bold text-xl hidden md:block">Kontak</h3>
-                    <h3 class="font-bold text-xl hidden md:block">Halaman</h3>
-                </div>
+    <!-- KONTAK -->
+    <section id="kontak" class="mt-10 w-full">
+        <div class="w-full bg-orange-500 py-4 px-8 md:px-20">
+            <div class="max-w-7xl mx-auto px-8 md:px-20 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
+                <h3 class="font-semibold text-base">Hubungi</h3>
+                <h3 class="font-semibold text-base hidden md:block">Kontak</h3>
+                <h3 class="font-semibold text-base hidden md:block">Halaman</h3>
             </div>
         </div>
 
-        <div class="w-full bg-orange-100">
+        <div class="w-full bg-orange-50">
             <div class="max-w-7xl mx-auto px-8 md:px-20 py-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
 
                     <div>
-                        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                            Rezha <br>
-                            Anugrah <br>
-                            Putra
+                        <h1 class="footer-name">
+                            Rezha<br>Anugrah<br>Putra
                         </h1>
+                        <p class="text-sm text-gray-500 mt-3">Product Manager · Universitas Brawijaya</p>
                     </div>
 
-                    <div class="space-y-4">
-                        <h3 class="font-bold text-xl text-black block md:hidden mb-2">Kontak</h3>
-                        <div>
-                            <a href="https://wa.me/6289508044747" class="hover:text-orange-500 transition" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com" class="hover:text-orange-500 transition" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-solid fa-envelope text-lg"></i>
-                                <span>Email</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.linkedin.com/in/rezha-anugrah-putra" class="hover:text-orange-500 transition" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-linkedin text-lg"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.instagram.com/rezha_ptra" class="hover:text-orange-500 transition" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-instagram text-lg"></i>
-                                <span>Instagram</span>
-                            </a>
-                        </div>
+                    <div class="space-y-3">
+                        <h3 class="font-semibold text-base text-black block md:hidden mb-2">Kontak</h3>
+                        <a href="https://wa.me/6289508044747" class="footer-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp w-5"></i> WhatsApp
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezhaap2007@gmail.com"
+                            class="footer-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-envelope w-5"></i> Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/rezha-anugrah-putra" class="footer-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin w-5"></i> LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/rezha_ptra" class="footer-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram w-5"></i> Instagram
+                        </a>
                     </div>
 
-                    <div class="space-y-4">
-                        <h3 class="font-bold text-xl text-black block md:hidden mb-2">Halaman</h3>
-                        <div>
-                            <a href="#beranda" class="hover:text-orange-500 transition">Beranda</a>
-                        </div>
-                        <div>
-                            <a href="#tentang" class="hover:text-orange-500 transition">Tentang Saya</a>
-                        </div>
-                        <div>
-                            <a href="#portofolio" class="hover:text-orange-500 transition">Portofolio</a>
-                        </div>
-                        <div>
-                            <a href="#pengalaman" class="hover:text-orange-500 transition">Pengalaman</a>
-                        </div>
-                        <div>
-                            <a href="#kontak" class="hover:text-orange-500 transition">Kontak</a>
-                        </div>
+                    <div class="space-y-3">
+                        <h3 class="font-semibold text-base text-black block md:hidden mb-2">Halaman</h3>
+                        <a href="#beranda" class="footer-link">Beranda</a>
+                        <a href="#tentang" class="footer-link">Tentang Saya</a>
+                        <a href="#portofolio" class="footer-link">Portofolio</a>
+                        <a href="#pengalaman" class="footer-link">Pengalaman</a>
+                        <a href="#kontak" class="footer-link">Kontak</a>
                     </div>
 
                 </div>
             </div>
         </div>
+        <div class="w-full bg-orange-500 py-3 text-center text-sm text-black/70">
+        </div>
     </section>
-
     <script src="script.js"></script>
 </body>
 
