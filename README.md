@@ -40,7 +40,7 @@ portofolio-rezha/
 ├── script.js           # JavaScript interaktivitas
 ├── CV/
 │   └── CV Rezha.pdf    # CV yang bisa diunduh
-└── Image/
+└── Image/              # Gambar untuk visualisasi pendukung
     ├── LB 3 1.png
     ├── Profil awal.png
     ├── NUS7NTARA.png

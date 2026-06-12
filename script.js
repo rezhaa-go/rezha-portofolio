@@ -18,7 +18,6 @@ menuBtn.addEventListener('click', () => {
 });
 
 // Tutup mobile menu saat link diklik
-
 mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
@@ -29,7 +28,6 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 // Tutup mobile menu saat klik di luar
-
 document.addEventListener('click', (e) => {
     if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
         mobileMenu.classList.add('hidden');
@@ -41,7 +39,6 @@ document.addEventListener('click', (e) => {
 
 
 // SCROLL FADE-IN ANIMATION
-
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -61,7 +58,6 @@ fadeEls.forEach(el => observer.observe(el));
 
 
 // ACTIVE NAV HIGHLIGHT SAAT SCROLL
-
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -85,7 +81,6 @@ sections.forEach(s => navObserver.observe(s));
 
 
 // SMOOTH SCROLL FALLBACK (untuk browser lama)
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
