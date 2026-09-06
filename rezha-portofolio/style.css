@@ -278,6 +278,7 @@ nav {
     color: #1a1a1a;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
     transition: color 0.25s ease;
 }
@@ -296,6 +297,13 @@ nav {
     border-radius: 9999px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.project-tag-spreadsheet,
+.project-tag.spreadsheet {
+    background: rgba(22, 163, 74, 0.12);
+    color: #16a34a;
 }
 
 .project-desc {
